@@ -6,7 +6,6 @@ public class Menu {
     public static void main(String[] args) {
         Menu.runApp();
     }
-
         public static void runApp() {
 
             boolean runGame = true;
@@ -16,34 +15,32 @@ public class Menu {
                 System.out.println("Press 2 for subtraction");
                 System.out.println("Press 3 for multiply");
                 System.out.println("Press 4 for divide");
+                System.out.println("Press 5 to quit the game");
 
                 int choiceInput = scanner.nextInt();
 
                 switch (choiceInput) {
                     case 1:
-                        Add.addWelcome();
-                        Add.add();
+                        Calculator.addWelcome();
+                        Calculator.add();
                         break;
                     case 2:
-                        Subtract.subWelcome();
-                        Subtract.subtract();
+                        Calculator.subWelcome();
+                        Calculator.subtract();
                         break;
                     case 3:
-                        Multiply.multiplyWelcome();
-                        Multiply.multiply();
+                        Calculator.multiplyWelcome();
+                        Calculator.multiply();
                         break;
                     case 4:
-                        Divide.divideWelcome();
-                        Divide.divide();
+                        Calculator.divideWelcome();
+                        Calculator.divide();
+                        break;
+                    case 5:
+                        runGame = false;
+                        System.out.println("Game stopped");
                         break;
                 }
-                System.out.println("\nDo you wanna play again? Write ´Yes´ or ´No´\n");
-                String endGameInput = scanner.nextLine();
-                if (endGameInput.equals("No")) {
-                    runGame = false;
-                } else if (endGameInput.equals("Yes")) {
-                    System.out.println("Lets go again!");
-                }
-            }while(runGame== true);
+            }while(runGame);
     }
 }
